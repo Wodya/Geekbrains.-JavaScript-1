@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function plus(a,b) {
+        return a+b;
+    }
+    function minus(a,b) {
+        return a-b;
+    }
+    function multiple(a,b) {
+        return a*b;
+    }
+    function divide(a,b) {
+        return 1.0*parseInt(100.0*a/b)/100;
+    }
+    function mathOperation(a, b, operation){
+        switch (operation) {
+            case "plus":
+                return plus(a,b);
+            case "minus":
+                return minus(a,b);
+            case "multiple":
+                return multiple(a,b);
+            case "divide":
+                return divide(a,b);
+            default:
+                throw ("Ошибочная операция")
+        }
+    }
+    let a = parseInt(100*Math.random());
+    let b = parseInt(100*Math.random());
+    alert(`a=${a}, b=${b}. Сумма=${mathOperation(a,b,"plus")}. Разность=${mathOperation(a,b,"minus")}. Произведение=${mathOperation(a,b,"multiple")}. Деление=${mathOperation(a,b,"divide")}`)
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function plus(a,b) {
+        return a+b;
+    }
+    function minus(a,b) {
+        return a-b;
+    }
+    function multiple(a,b) {
+        return a*b;
+    }
+    function divide(a,b) {
+        return 1.0*parseInt(100.0*a/b)/100;
+    }
+
+    let a = parseInt(100*Math.random());
+    let b = parseInt(100*Math.random());
+    alert(`a=${a}, b=${b}. Сумма=${plus(a,b)}. Разность=${minus(a,b)}. Произведение=${multiple(a,b)}. Деление=${divide(a,b)}`)
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    'use strict';
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);      // 1. a=1 => преинкремент => a=2 => c=2 => alert(2)
+    d = b++; alert(d);      // 2. b=1 => d=1 => постинкремент b=2 => alert(1)
+    c = (2+ ++a); alert(c); // 3. a=2 => преинкремент => a=3 => c=2+3=5 => alert(5)
+    d = (2+ b++); alert(d); // 4. b=2 => d=2+2=4 => постинкремент b=3 => alert(4)
+    alert(a);               // 5. alert(3) строка 3
+    alert(b);               // 6. alert(3) строка 4
+</script>
+</body>
+</html>

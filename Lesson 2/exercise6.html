@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    let a= prompt("Введите сумму");
+    let last = a.substring(a.length-1)
+    let preLast = a.substring(a.length-2,a.length-1)
+    let rub = "рублей";
+    if(preLast != "1" && /[234]/.test(last))
+        rub = "рубля";
+    if(preLast != "1" && last == 1)
+        rub = "рубль";
+    alert(`На ваш счёт зачислено ${a} ${rub}`)
+</script>
+</body>
+</html>
