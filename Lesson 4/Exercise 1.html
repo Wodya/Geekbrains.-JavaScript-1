@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    'use strict';
+    function decomposite(number) {
+        const ret={};
+        number = parseInt(number);
+        if(isNaN(number)) {
+            console.log("Неверное указано число");
+        }
+        else if(number < 0 || number > 999){
+            console.log("Число выходит за диапазон 0...999");
+        }
+        else {
+            ret.hundreds = parseInt(number / 100);
+            ret.tens = parseInt((number - ret.hundreds*100) / 10);
+            ret.units = number - ret.hundreds*100 - ret.tens*10;
+        }
+        return ret;
+    }
+
+    console.log(decomposite(235));
+    console.log(decomposite('235.67'));
+    console.log(decomposite(1234));
+    console.log(decomposite('f1234'));
+</script>
+</body>
+</html>
