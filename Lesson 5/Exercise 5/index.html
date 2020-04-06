@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/73b05ceb2e.js" crossorigin="anonymous"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        .black-Cell{
+            background-color: #1b10ff;
+        }
+        .white-Cell{
+            background-color: #848484;
+        }
+        .border-bottom{
+            border-bottom: 1px solid black;
+        }
+        .border-right{
+            border-right: 1px solid black
+        }
+        .figure-black{
+            font-size: 30px;
+            color: #000;
+        }
+        .figure-white{
+            font-size: 30px;
+            color: #FFF;
+        }
+        .border-hint{
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    let figures = [
+        {Tag:'<i class="fas fa-chess-pawn"></i>',Pos:["A2","B2","C2","D2","E2","F2","G2","H2","A7","B7","C7","D7","E7","F7","G7","H7"]}, //Пешка
+        {Tag:'<i class="fas fa-chess-rook"></i>',Pos:["A1","H1","A8","H8"]}, //Ладья
+        {Tag:'<i class="fas fa-chess-knight"></i>',Pos:["B1","G1","B8","G8"]}, //Конь
+        {Tag:'<i class="fas fa-chess-bishop"></i>',Pos:["C1","F1","C8","F8"]}, //Слон
+        {Tag:'<i class="fas fa-chess-queen"></i>',Pos:["D1","D8"]}, //Ферзь
+        {Tag:'<i class="fas fa-chess-king"></i>',Pos:["E1","E8"]} //Король
+    ];
+    function getFigure(row,col){
+        for(let figure of figures){
+            for(let cell of figure.Pos){
+                if(col === cell.charCodeAt(0) -"A".charCodeAt(0) + 1 && row === parseInt(cell[1])){
+                    return figure.Tag;
+                }
+            }
+        }
+        return "";
+    }
+    function drawBoard() {
+        let alpha = "A".charCodeAt(0);
+        let num = 1;
+        let str = "<table>"
+        for (let i = 0; i < 9; i++) {
+            str += "<tr>";
+            for (let j = 0; j < 9; j++) {
+                let tdText = "";
+                let tdClass = "";
+                if (i === 0 && j === 0) {
+                } else if (i === 0) {
+                    tdText = String.fromCharCode(alpha++);
+                    tdClass = "border-hint";
+                } else if (j === 0) {
+                    tdText = num++;
+                    tdClass = "border-hint";
+                } else {
+                    tdClass = (i + j) % 2 === 0 ? "white-Cell" : "black-Cell";
+                    tdClass += i <= 5 ? " figure-white" : " figure-black";
+                    tdText = getFigure(i, j);
+                }
+
+                if ((i === 0 || i === 8) && j !== 0)
+                    tdClass += " border-bottom";
+                if ((j === 0 || j === 8) && i !== 0)
+                    tdClass += " border-right";
+                str += `<td class="${tdClass}">${tdText}</td>`
+            }
+            str += "</tr>";
+        }
+        str += "</table>";
+        document.body.insertAdjacentHTML("afterbegin", str);
+    }
+    drawBoard();
+</script>
+</body>
+</html>
