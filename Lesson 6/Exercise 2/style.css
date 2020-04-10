@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.slider{
+    height: 620px;
+    width: 100vh;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+}
+.slider-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.slider-symbol{
+    font-size: 100px;
+    color: #b3b3b3;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 1;
+}
+.slider-left{
+    top: 50%;
+    left: 5%;
+}
+.slider-right{
+    top: 50%;
+    left: 84%;
+}
+.slider-wait{
+    top: 30%;
+    left: 47%;
+}
+.slider-img_move {
+    transition: all 1s ease-in-out;
+}
