@@ -27,7 +27,7 @@ class board{
         for(let row=1; row <= this.rows; row++){
             const tr = document.createElement("tr");
             table.appendChild(tr);
-            for(let col=1; col <= this.rows; col++) {
+            for(let col=1; col <= this.cols; col++) {
                 const td = document.createElement("td",);
                 tr.appendChild(td);
                 td.dataset.row = row.toString();
