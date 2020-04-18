@@ -1,0 +1,24 @@
+table{
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #444444;
+}
+td{
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+}
+.snake{
+    background-color: #fff;
+}
+.food{
+    background-color: greenyellow;
+}
+.finish{
+    font-size: 30px;
+    color: red;
+}
+.length{
+    font-size: 30px;
+    color: green;
+}
