@@ -43,7 +43,6 @@ class Game{
 
         if(this.rows*this.cols - this.field.flat().filter(p => p === this.states.open).length === this.mines.length)
             this.finish(true);
-
     }
     showMines(){
         this.mines.forEach(p => this.board.showMine(p.x,p.y));
